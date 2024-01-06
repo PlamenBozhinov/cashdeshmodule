@@ -1,0 +1,2 @@
+{"currency":"BGN","balance":1000,"denominations":{"50":10,"10":50}}
+{"currency":"EUR","balance":2000,"denominations":{"50":20,"10":100}}

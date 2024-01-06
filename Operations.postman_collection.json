@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "8143010c-17b4-4c5f-ab3b-dab83fe218bd",
+		"name": "Operations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23705213"
+	},
+	"item": [
+		{
+			"name": "Withdraw 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operation\": \"Withdraw\",\r\n    \"currency\": \"BGN\",\r\n    \"cashier\": \"MARTINA\",\r\n    \"value\": 100,\r\n    \"denomination\": {\r\n        \"10\": 5,\r\n        \"50\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/cash-operation"
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operation\": \"Withdraw\",\r\n    \"currency\": \"EUR\",\r\n    \"cashier\": \"MARTINA\",\r\n    \"value\": 500,\r\n    \"denomination\": {\r\n        \"50\": 10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/cash-operation"
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operation\": \"Deposit\",\r\n    \"currency\": \"BGN\",\r\n    \"cashier\": \"MARTINA\",\r\n    \"value\": 600,\r\n    \"denomination\": {\r\n        \"10\": 10,\r\n        \"50\": 10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/cash-operation"
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"operation\": \"Deposit\",\r\n    \"currency\": \"EUR\",\r\n    \"cashier\": \"MARTINA\",\r\n    \"value\": 200,\r\n    \"denomination\": {\r\n        \"20\": 5,\r\n        \"50\": 2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/cash-operation"
+			},
+			"response": []
+		},
+		{
+			"name": "Balance Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "FIB-X-AUTH",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/cash-balance"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"value": "f9Uie8nNf112hx8s",
+			"key": "FIB-X-AUTH"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
