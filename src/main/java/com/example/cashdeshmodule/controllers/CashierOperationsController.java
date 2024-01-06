@@ -21,7 +21,11 @@ public class CashierOperationsController {
         if (!hashingService.verifyApiKey(apiKey)) {
             return ResponseEntity.badRequest().body("Invalid API key");
         }
-        cashierOperationsService.handleCashierOperation(request);
+        try {
+            cashierOperationsService.handleCashierOperation(request);
+        } catch (UnsupportedOperationException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
         return ResponseEntity.ok().body("Operations is successful");
     }
 }
